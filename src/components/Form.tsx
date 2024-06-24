@@ -41,8 +41,7 @@ const ChatgptForm = () => {
   });
 
   const callChatGPT = async (title: string) => {
-    // const apiKey = "sk-proj-zbUrsxC2MaXRcygEJdcBT3BlbkFJGayQVgNp6Tlp5t6YwAws";
-    const apiKey = "sk-proj-H61f1zm8wQLVaKQgFAwyT3BlbkFJ7K5xPNIWtqcnQuQCbCUx";
+    const apiKey = "";
     const endpoint = "https://api.openai.com/v1/completions";
 
     const prompt = `Title: ${title}`;
