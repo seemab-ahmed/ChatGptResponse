@@ -6,6 +6,9 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea"
 
+
+import OpenAI from "openai";
+
 import {
   Form,
   FormControl,
@@ -32,6 +35,19 @@ const ChatgptForm = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
+const openai = new OpenAI();
+
+async function main() {
+  const completion = await openai.chat.completions.create({
+    messages: [{ role: "system", content: "You are a helpful assistant." }],
+    model: "gpt-3.5-turbo",
+  });
+
+  console.log(completion.choices[0]);
+}
+
+main();
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -41,7 +57,7 @@ const ChatgptForm = () => {
   });
 
   const callChatGPT = async (title: string) => {
-    const apiKey = "";
+    const apiKey = "sk-proj-tqoAQf9KDMuBYoztcsNYT3BlbkFJSDheviDUsC1wSZaFD2EO";
     const endpoint = "https://api.openai.com/v1/completions";
 
     const prompt = `Title: ${title}`;
