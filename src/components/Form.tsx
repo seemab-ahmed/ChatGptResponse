@@ -57,7 +57,7 @@ main();
   });
 
   const callChatGPT = async (title: string) => {
-    const apiKey = "sk-proj-tqoAQf9KDMuBYoztcsNYT3BlbkFJSDheviDUsC1wSZaFD2EO";
+    const apiKey = "";
     const endpoint = "https://api.openai.com/v1/completions";
 
     const prompt = `Title: ${title}`;
@@ -78,7 +78,7 @@ main();
         }
       );
 
-      console.log(result);
+      console.log(result , 'sk-proj-tqoAQf9KDMuBYoztcsNYT3BlbkFJSDheviDUsC1wSZaFD2EO');
 
       return result.data.choices[0].text.trim();
     } catch (error) {
