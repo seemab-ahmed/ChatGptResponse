@@ -78,7 +78,7 @@ main();
         }
       );
 
-      console.log(result , 'sk-proj-tqoAQf9KDMuBYoztcsNYT3BlbkFJSDheviDUsC1wSZaFD2EO');
+      console.log(result , '');
 
       return result.data.choices[0].text.trim();
     } catch (error) {
